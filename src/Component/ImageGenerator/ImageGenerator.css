@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil:opsz,wght@10..72,100..900&family=Boldonse&family=Dancing+Script:wght@400..700&family=Gravitas+One&family=Martel+Sans:wght@200;300;400;600;700;800;900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Tektur:wght@400..900&family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap');
+
+.ai-image-generator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+  height: 50px;
+  gap: 40px;
+  margin: auto;
+}
+.header {
+  font-size: 24px;
+  font-weight: bold;
+  background-image: linear-gradient(90deg, #6b9ae0 0%, #e5c7b2 50%, #34d6ec 100%);
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 1.8s infinite linear;
+  font-size: 4rem;
+   font-family: "Martel Sans", sans-serif;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: -100% 0;
+  }
+}
+
+img{
+    width: 357px;
+    /* height: 100px; */
+    border-radius: 20%;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    object-fit: cover;
+    object-position: center;
+    margin-bottom: 40px;
+}
+img:hover {
+    transform: scale(1.06);
+    box-shadow: rgba(63, 209, 33, 0.2) 0px 10px 24px;
+}
+.search-box{
+    
+    width: 100%;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.search-input{
+    width: 80%;
+    height: 30px;
+    padding: 10px;
+    border-radius: 50px;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    font-size: 16px;
+    font-family: "Martel Sans", sans-serif;
+    background: transparent;
+    color: #f3f1f0;
+    outline: none;
+    background-color: rgba(240, 248, 255, 0.062);
+    transition: box-shadow 0.2s, background-color 0.2s;
+}
+.search-input:focus {
+    box-shadow: rgba(103, 100, 100, 0.2) 0px 0px 20px;
+    background-color: rgba(203, 225, 244, 0.1);
+}
+.search-input::placeholder {
+    color: #e5c7b2;
+    opacity: 0.8;
+}
+.generate-btn {
+    width: 40%;
+    height: 30px;
+    border-radius: 50px;
+    border: none;
+    background-color: #21262d;
+    color: #e5c7b2;
+    font-size: 16px;
+    font-family: "Martel Sans", sans-serif;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    transition: background-color 1s;
+}
+.generate-btn:hover {
+    background-color: #101a1b;
+    /* box-shadow: rgba(77, 66, 44, 0.2) 0px 0px 24px; */
+}
+.loading-wrapper {
+  width: 80%;
+  height: 10px;
+  background: #21262d;
+  border-radius: 50px;
+  overflow: hidden;
+  box-shadow: inset 0 0 5px #00000033, 0 0 12px rgba(229, 199, 178, 0.4);
+  margin-top: 20px;
+}
+
+.loading-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #e5c7b2, #34d6ec, #6b9ae0);
+  background-size: 300% 300%;
+  animation: loading-glow 2s infinite;
+  width: 0;
+  transition: width 1s ease-in-out;
+  border-radius: 50px;
+  
+}
+
+@keyframes loading-glow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.loading-text {
+  margin-top: 10px;
+  font-size: 18px;
+  font-family: "Martel Sans", sans-serif;
+  color: #e5c7b2;
+}
